@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_CreateStringKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateStringKey" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateStringKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateStringKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateDwordKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDwordKey" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateDwordKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDwordKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ModifyStringKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyStringKey" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ModifyStringKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyStringKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ModifyDwordKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyDwordKey" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ModifyDwordKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyDwordKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteKey" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReadKeyFromRegistry_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadKeyFromRegistry" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReadKeyFromRegistry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadKeyFromRegistryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="CreateStringKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateStringKey" message="tns:IService1_CreateStringKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateStringKeyResponse" message="tns:IService1_CreateStringKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDwordKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateDwordKey" message="tns:IService1_CreateDwordKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateDwordKeyResponse" message="tns:IService1_CreateDwordKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyStringKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ModifyStringKey" message="tns:IService1_ModifyStringKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ModifyStringKeyResponse" message="tns:IService1_ModifyStringKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyDwordKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ModifyDwordKey" message="tns:IService1_ModifyDwordKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ModifyDwordKeyResponse" message="tns:IService1_ModifyDwordKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteKey" message="tns:IService1_DeleteKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteKeyResponse" message="tns:IService1_DeleteKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadKeyFromRegistry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReadKeyFromRegistry" message="tns:IService1_ReadKeyFromRegistry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReadKeyFromRegistryResponse" message="tns:IService1_ReadKeyFromRegistry_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateStringKey">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateStringKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDwordKey">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateDwordKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyStringKey">
+      <soap:operation soapAction="http://tempuri.org/IService1/ModifyStringKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyDwordKey">
+      <soap:operation soapAction="http://tempuri.org/IService1/ModifyDwordKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKey">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadKeyFromRegistry">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReadKeyFromRegistry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WcfServiceLibraryPOC3/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
